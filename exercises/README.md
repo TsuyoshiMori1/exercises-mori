@@ -27,7 +27,7 @@
 > cd js-exercises
 
 # ライブラリのインストール
-> npm install
+> npm install[text](../presets/js/package.json)
 
 # テストケース実行 (全て)
 > npm test
