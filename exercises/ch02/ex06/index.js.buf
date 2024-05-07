@@ -1,0 +1,21 @@
+export function fisbuzz() {
+  for (var i = 1; i <= 100; i++) {
+    var f = 0;
+    if (i % 3 == 0) {
+      printf("Fizz");
+      f = 1;
+    }
+    if (i % 5 == 0) {
+      printf("Buzz");
+      f = 1;
+    }
+    if (f == 0) {
+      printf("%d", i);
+    }
+    
+  }
+}
+
+
+1行
+(%3 %5)||(i.toString())

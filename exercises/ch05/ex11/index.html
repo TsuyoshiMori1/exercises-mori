@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Execution in HTML</title>
+  </head>
+  <body>
+    <h1>JavaScript Execution in HTML</h1>
+
+    <script>
+      function potentiallyBuggyCode() {
+        let hoge = "start";
+        debugger;
+
+        hoge = "end";
+        debugger;
+      }
+
+      potentiallyBuggyCode();
+    </script>
+  </body>
+</html>

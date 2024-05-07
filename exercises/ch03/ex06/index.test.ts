@@ -1,18 +1,22 @@
 import { padStart, slice, substring, trim } from "./index.ts"; // typescript で書く場合は "./index.ts"
 
-function substringTestCase(str, indexStart, indexEnd) {
+function substringTestCase(str: string, indexStart: number, indexEnd?: number) {
   return [str, indexStart, indexEnd, str.substring(indexStart, indexEnd)];
 }
 
-function sliceTestCase(str, indexStart, indexEnd) {
+function sliceTestCase(str: string, indexStart: number, indexEnd: number) {
   return [str, indexStart, indexEnd, str.slice(indexStart, indexEnd)];
 }
 
-function padStartTestCase(str, targetLength, padString) {
+function padStartTestCase(
+  str: string,
+  targetLength: number,
+  padString: string
+) {
   return [str, targetLength, padString, str.padStart(targetLength, padString)];
 }
 
-function trimTestCase(str) {
+function trimTestCase(str: string) {
   return [str, str.trim()];
 }
 

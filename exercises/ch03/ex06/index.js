@@ -1,19 +1,39 @@
-export function substring(str, indexStart, indexEnd) {
-  // TODO: ここを実装しなさい
-  return "TODO";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.trim = exports.padStart = exports.slice = exports.substring = void 0;
+function substring(str, indexStart, indexEnd) {
+    var array = str.split("");
+    var returnStr = "";
+    for (var i = indexStart; i < indexEnd; i++) {
+        returnStr += array[i];
+    }
+    return returnStr;
 }
-
-export function slice(str, indexStart, indexEnd) {
-  // TODO: ここを実装しなさい
-  return "TODO";
+exports.substring = substring;
+function slice(str, indexStart, indexEnd) {
+    var array = str.split("");
+    var returnStr = "";
+    for (var i = indexStart; i < indexEnd; i++) {
+        returnStr += array[i];
+    }
+    return returnStr;
 }
-
-export function padStart(str, targetLength, padString) {
-  // TODO: ここを実装しなさい
-  return "TODO";
+exports.slice = slice;
+function padStart(str, targetLength, padString) {
+    var returnStr = "";
+    for (var i = 0; i < targetLength - str.length; i += padString.length) {
+        returnStr += padString;
+    }
+    return (returnStr += str);
 }
-
-export function trim(str) {
-  // TODO: ここを実装しなさい
-  return "TODO";
+exports.padStart = padStart;
+function trim(str) {
+    var resultStr = "";
+    for (var _i = 0, str_1 = str; _i < str_1.length; _i++) {
+        var char = str_1[_i];
+        if (char !== " ")
+            resultStr += char;
+    }
+    return resultStr;
 }
+exports.trim = trim;
