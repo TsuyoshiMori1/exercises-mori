@@ -20,13 +20,14 @@ npm run test # テスト実行
 - npm run format: Prettier によるソースコードのフォーマットが実行されます
 - npm run lint: ESLint によるソースコードの Lint が実行されます
 - npx ts-node <実行したい ts ファイルのパス>: TypeScript のコードを JavaScript にトランスパイルせず Node.js 上で直接実行します (TypeScript 版プリセットのみ)
+- yarn test ch01/ex01/index.test.ts : 指定した test だけ実行する
 
 ## Prettier と ESLint の適用除外設定
 
 このプリセットの設定で Prettier や ESLint を使うと、問題によってはフォーマットされて解答できないことや、警告が回避できないことがあります。その場合それぞれ以下などを参考にして、ソース中のコメントや設定ファイルでフォーマットや警告の対象外にしてください。
 
 - Prettier
-    - [Ignoring Code · Prettier](https://prettier.io/docs/en/ignore.html)
+  - [Ignoring Code · Prettier](https://prettier.io/docs/en/ignore.html)
 - ESLint
-    - [Configure Rules \- ESLint \- Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/configure/rules#disabling-rules)
-    - [Ignore Files \- ESLint \- Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/configure/ignore)
+  - [Configure Rules \- ESLint \- Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/configure/rules#disabling-rules)
+  - [Ignore Files \- ESLint \- Pluggable JavaScript Linter](https://eslint.org/docs/latest/use/configure/ignore)
