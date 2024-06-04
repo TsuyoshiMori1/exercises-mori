@@ -9,19 +9,5 @@ export function reverse(data: string) {
     reverse[i] = segmentArray[segmentArray.length - i - 1].segment;
   }
 
-  console.log(segmentArray);
-  console.log(segmentArray.length);
-  console.log(reverse);
-
   return reverse.join("");
 }
-
-reverse("𠮷野家");
-console.log("𠮷野家"[0]);
-console.log("𠮷野家"[1]);
-console.log("𠮷野家"[2]);
-reverse("👨‍👨‍👧‍👧家族");
-console.log("👨‍👨‍👧‍👧家族"[0]);
-console.log("👨‍👨‍👧‍👧家族"[1]);
-console.log("👨‍👨‍👧‍👧家族"[2]);
-console.log("👨‍👨‍👧‍👧家族"[3]);
