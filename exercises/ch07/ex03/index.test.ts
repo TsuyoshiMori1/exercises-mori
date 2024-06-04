@@ -31,7 +31,7 @@ test("reverse", () => {
 });
 
 test("every", () => {
-  const isBelowThreshold = (currentValue) => currentValue < 40;
+  const isBelowThreshold = (currentValue: number) => currentValue < 40;
   expect(every([1, 2, 3, 4, 5], isBelowThreshold)).toBeTruthy();
   expect(every([1, 2, 3, 45, 5], isBelowThreshold)).toBeFalsy();
   expect(every([], isBelowThreshold)).toBeTruthy();
@@ -39,18 +39,18 @@ test("every", () => {
   expect(every([1, , 3], (x) => x !== undefined)).toBeTruthy();
   const original = [1, 2, 3];
   expect(
-    every(original, (elem, index, arr) => {
+    every(original, (elem: number, index: number, arr: any[]) => {
       if (arr.length > index + 1) {
         arr[index + 1]--;
       }
       return elem < 3;
-    }),
+    })
   ).toBeTruthy();
   expect(original).toStrictEqual([1, 1, 2]);
 });
 
 test("some", () => {
-  const isBelowThreshold = (currentValue) => currentValue < 40;
+  const isBelowThreshold = (currentValue: number) => currentValue < 40;
   expect(some([41, 42, 3, 44, 45], isBelowThreshold)).toBeTruthy();
   expect(some([41, 42, 43, 44, 45], isBelowThreshold)).toBeFalsy();
   expect(some([], isBelowThreshold)).toBeFalsy();
@@ -59,12 +59,12 @@ test("some", () => {
   expect(some([1, , 3], (x) => x === undefined)).toBeFalsy();
   const original = [1, 2, 3];
   expect(
-    some(original, (elem, index, arr) => {
+    some(original, (elem: number, index: number, arr: any[]) => {
       if (arr.length > index + 1) {
         arr[index + 1]--;
       }
       return elem > 3;
-    }),
+    })
   ).toBeFalsy();
   expect(original).toStrictEqual([1, 1, 2]);
 });
