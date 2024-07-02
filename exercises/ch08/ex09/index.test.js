@@ -1,8 +1,15 @@
-import { withResource } from "./index.js";
+import { withResource } from "./index.ts";
+
+interface Resource {
+  called: string[];
+  doA(): void;
+  doB(): void;
+  close(): void;
+}
 
 describe("withResource", () => {
   it("should do process and call close finally", () => {
-    const resource = {
+    const resource: Resource = {
       called: [],
       doA() {
         this.called.push("doA");
@@ -23,7 +30,7 @@ describe("withResource", () => {
   });
 
   it("should call close when an error occurs", () => {
-    const resource = {
+    const resource: Resource = {
       called: [],
       doA() {
         this.called.push("doA");
@@ -31,6 +38,9 @@ describe("withResource", () => {
       },
       close() {
         this.called.push("close");
+      },
+      doB: function (): void {
+        throw new Error("Function not implemented.");
       },
     };
     expect(() => withResource(resource, (res) => res.doA())).toThrow(Error);
