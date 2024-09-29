@@ -7,4 +7,3 @@ test("class puzzle", () => {
   expect(new C.C().method()).toBe(4);
   expect(new C().C.method()).toBe(5);
   expect(new new C().C().method()).toBe(6);
-});
