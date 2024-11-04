@@ -1,44 +1,106 @@
-const form = document.querySelector("#new-todo-form");
-const list = document.querySelector("#todo-list");
-const input = document.querySelector("#new-todo");
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
 
-form.addEventListener("submit", (e) => {
-  // TODO: ここで form のイベントのキャンセルを実施しなさい (なぜでしょう？)
-  // フォームが送信されるとページがリロードされるので、それを防ぐため
-  e.preventDefault();
+/* タイトルのスタイル */
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
-  // 両端からホワイトスペースを取り除いた文字列を取得する
-  if (input.value.trim() === "") {
-    return;
-  }
-  const todo = input.value.trim();
-  // new-todo の中身は空にする
-  input.value = "";
+/* フォームのスタイル */
+#new-todo-form {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
 
-  // ここから #todo-list に追加する要素を構築する
-  const elem = document.createElement("li");
+#new-todo {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
 
-  const label = document.createElement("label");
-  label.textContent = todo;
-  label.style.textDecorationLine = "none";
+#new-todo:focus {
+  border-color: #007bff;
+}
 
-  const toggle = document.createElement("input");
-  toggle.type = "checkbox";
-  // TODO: toggle が変化 (change) した際に label.style.textDecorationLine を変更しなさい
-  toggle.addEventListener("change", () => {
-    label.style.textDecorationLine = toggle.checked ? "line-through" : "none";
-  });
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  const destroy = document.createElement("button");
-  destroy.textContent = "❌";
-  // TODO: destroy がクリック (click) された場合に elem を削除しなさい
-  destroy.addEventListener("click", () => {
-    elem.remove();
-  });
+button:hover {
+  background-color: #0056b3;
+}
 
-  // TODO: elem 内に toggle, label, destroy を追加しなさい
-  elem.appendChild(toggle);
-  elem.appendChild(label);
-  elem.appendChild(destroy);
-  list.prepend(elem);
-});
+/* Todoリストのスタイル */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li .view {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+li .toggle {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+li .content {
+  font-size: 16px;
+  color: #333;
+}
+
+li.completed .content {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+li .destroy {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #e74c3c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+li .destroy:hover {
+  color: #c0392b;
+}

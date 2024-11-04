@@ -25,6 +25,7 @@ npm run test:browser # ブラウザのテスト(Playwright)実行
 - npm run server: ブラウザでアクセスするためのウェブサーバが起動します。 http://localhost:3000 でアクセスできます
 - npx ts-node <実行したい ts ファイルのパス>: TypeScript のコードを JavaScript にトランスパイルせず Node.js 上で直接実行します (TypeScript 版プリセットのみ)
 - yarn test ch01/ex01/index.test.ts : 指定した test だけ実行する
+- npx playwright test ch15.01-03/ex03 : 指定したディレクトリ下のブラウザを使ったテストを実行する
 
 ## Prettier と ESLint の適用除外設定
 
