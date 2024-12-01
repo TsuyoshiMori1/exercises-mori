@@ -22,6 +22,7 @@
   },
   "type": "module",
   "dependencies": {
-    "playwright": "^1.47.2"
+    "playwright": "^1.47.2",
+    "ws": "^8.18.0"
   }
 }
