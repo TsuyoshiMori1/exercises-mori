@@ -45,7 +45,7 @@ process.on("SIGTERM", () => {
 
 while (true) {
   const resp = await startChild();
-  if (resp[0] === 0) {
+  if (resp[0] !== 0) {
     console.log("Stop");
     break;
   }
